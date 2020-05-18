@@ -1,0 +1,70 @@
+.c-experiences {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 ($gutter-sml + 1)*-1;
+
+    @include av-mq(lap-and-up) {
+      margin: 0 ($gutter-lrg + 1)*-1;
+    }
+  }
+
+  &__item {
+    flex-basis: 100%;
+    margin: 2px 1px 0;
+
+    @include av-mq(palm) {
+      flex-basis: calc(50% - 2px);
+    }
+
+    @include av-mq(lap-and-up) {
+      flex-basis: calc(25% - 2px);
+    }
+  }
+
+  &__info {
+    padding: $gutter-sml;
+    font-size: 14px;
+
+    @include av-mq(lap-and-up) {
+      padding: $gutter-sml $gutter-lrg;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+  }
+
+  h2 {
+    padding: 10px $gutter-sml;
+    margin: 0 $gutter-sml*-1;
+    background: $tertiary;
+    color: $secondary;
+
+    @include av-mq(lap-and-up) {
+      padding: 10px $gutter-lrg;
+      margin: 0 $gutter-lrg*-1;
+    }
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 0;
+    text-transform: none;
+    z-index: 2;
+    background: rgba($nonary, 0.4);
+    padding: 10px $gutter-sml;
+    color: $secondary;
+    width: 100%;
+
+    @include av-mq(lap-and-up) {
+      padding: 10px $gutter-lrg;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,31 @@
+.c-reviews {
+  &__quote {
+    font-size: 18px;
+
+    &::after {
+      content: '';
+      background: url('../images/icons/tripadvisor.svg') no-repeat;
+      display: block;
+      height: 16px;
+      width: 100px;
+      background-size: cover;
+    }
+  }
+
+  h2 {
+    padding: 10px $gutter-sml;
+    margin: 0 $gutter-sml*-1 1em;
+    background: $tertiary;
+    color: $secondary;
+
+    @include av-mq(lap-and-up) {
+      padding: 10px $gutter-lrg;
+      margin: 0 $gutter-lrg*-1 1em;
+    }
+
+    strong {
+      font-size: 22px;
+      line-height: 0;
+    }
+  }
+}

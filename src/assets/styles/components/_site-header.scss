@@ -1,0 +1,143 @@
+@import 'hamburger';
+
+.is--nav-active {
+  @include av-mq(pocket) {
+    background: $septenary;
+
+    main,
+    footer {
+      display: none;
+    }
+
+    .c-header {
+      &__navigation-links,
+      &__language-links {
+        display: block;
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+.is--modal-active {
+  overflow: hidden;
+  position: fixed;
+}
+
+.c-header {
+  position: absolute;
+  padding-top: 30px;
+  z-index: $first-index;
+  width: 100%;
+
+  h1 {
+    border-bottom: 2px solid $secondary;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 1;
+    padding-bottom: 4px;
+
+    @include av-mq(lap-and-up) {
+      font-size: 38px;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 15px;
+
+    @include av-mq(lap-and-up) {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary;
+  
+    &:hover {
+      text-decoration: underline;
+      transition: all ease-in 0.3s;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 0;
+    top: 10px;
+
+    @include av-mq(lap-and-up) {
+      display: none;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: $gutter-lrg;
+    left: $gutter-lrg;
+    right: $gutter-lrg;
+  }
+
+  &__navigation {
+    position: relative;
+
+    @include av-mq(lap-and-up) {
+      border-bottom: 2px solid $secondary;
+      display: flex;
+    }
+  }
+
+  &__navigation-links {
+    text-transform: uppercase;
+    font-size: 16px;
+    display: none;
+
+    a {
+      display: block;
+    }
+
+    @include av-mq(lap) {
+      display: inline-block;
+      margin-left: auto;
+      column-count: 4;
+    }
+
+    @include av-mq(desk) {
+      display: flex;
+      margin-left: auto;
+      align-self: flex-end;
+
+      li {
+        margin: 0 0 0 $gutter-lrg;
+      }
+    }
+  }
+
+  &__language-links {
+    color: $secondary;
+    display: none;
+
+    a {
+      display: block;
+
+      @include av-mq(lap-and-up) {
+        display: inline-block;
+      }
+    }
+
+    @include av-mq(lap-and-up) {
+      display: flex;
+      float: right;
+
+      li + li {
+        margin-left: 5px;
+  
+        &::before {
+          content: ':';
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

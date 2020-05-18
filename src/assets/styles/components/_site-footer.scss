@@ -1,0 +1,38 @@
+.c-footer {
+  &__site-map {
+    color: $secondary;
+    background: $septenary;
+  
+    a {
+      color: $secondary;
+    }
+  }
+
+  &__section-list {
+    margin-bottom: $sml-row-gap;
+
+    @include av-mq(lap-and-up) {
+      margin-bottom: $lrg-row-gap;
+    }
+  }
+
+  h2 {
+    margin: $sml-row-gap 0 0.5em 0;
+  }
+
+  @include av-mq(lap-and-up) {
+    margin: $lrg-row-gap 0 0.5em 0;
+  }
+
+  &__contact-details {
+    @include av-mq(lap-and-up) {
+      ul {
+        display: flex;
+      }
+
+      li {
+        margin-right: $gutter-sml;
+      }
+    }
+  }
+}
